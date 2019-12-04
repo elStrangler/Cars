@@ -5,7 +5,6 @@ using namespace std;
 class Human
 {
 public:
-
     Human(string Name, int Age)
     {
         this->Name = Name;
@@ -30,7 +29,6 @@ private:
 class Vehicle
 {
 public:
-
     Vehicle(string Model, string Color)
     {
         this->Model = Model;
@@ -57,8 +55,11 @@ public:
 
     }
 
-
-
+    void GetOut(Human& p)
+    {
+        
+        cout << "Я " << GetModel() << ", из меня вышел " << p.GetName() << "!" << endl;
+    }
 
     string GetModel()
     {
@@ -109,13 +110,13 @@ int main()
     c1.GetIn(p1);
     c1.Drive();
     c1.Brake();
-    //c1.GetOut();
+    c1.GetOut(p1);
 
     Truck t1("Газель", "серый");
     t1.GetIn(p1);
     t1.Drive();
     t1.Brake();
-    //t1.GetOut();
+    t1.GetOut(p1);
 
     return 0;
 
